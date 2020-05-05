@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     // HELLO YONG YI
+    // BYEBYE
 
     Button btnBR, btnAll, btnCheck, btnAdd;
 
