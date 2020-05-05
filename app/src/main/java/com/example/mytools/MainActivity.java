@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     // HELLO YONG YI
     // BYEBYE
+    // OK BYEBYE
 
     Button btnBR, btnAll, btnCheck, btnAdd;
 
