@@ -9,6 +9,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    // HELLO YONG YI
+
     Button btnBR, btnAll, btnCheck, btnAdd;
 
     @Override
