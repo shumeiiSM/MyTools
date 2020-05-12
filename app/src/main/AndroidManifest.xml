@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".BRTools"></activity>
-        <activity android:name=".AllTools" />
         <activity android:name=".CheckTools" />
         <activity android:name=".AddTools" />
         <activity android:name=".MainActivity">

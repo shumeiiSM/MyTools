@@ -129,7 +129,7 @@ public class AddTools extends AppCompatActivity {
             public void onClick(View v) {
                 if (validate()) {
 
-                    //date = btnDate.getText().toString();
+                    availability = true;
 
                     if (date.equals("Select your date")) {
                         Toast.makeText(AddTools.this, "Please Choose Your Date", Toast.LENGTH_LONG).show();

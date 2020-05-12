@@ -1,6 +1,8 @@
 package com.example.mytools;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +10,6 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
-    // HELLO YONG YI
-    // BYEBYE
-    // OK BYEBYE
-    // LAST
 
     Button btnBR, btnAll, btnCheck, btnAdd;
 
@@ -34,13 +31,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         btnAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Fragment fragment = new AllTools();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+
+                /*
+                Fragment fragment = new AllTools();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+
+                 */
+
+                /*
                 Intent intentNewAct = new Intent(getBaseContext(), AllTools.class);
                 startActivity(intentNewAct);
+                 */
             }
         });
+
 
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override

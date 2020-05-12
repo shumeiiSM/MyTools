@@ -71,10 +71,10 @@ public class AllToolDisplay_Adapter extends RecyclerView.Adapter<AllToolDisplay_
         Boolean state = false;
 
         if(currentItem.getAvailability() == state) {
-            Picasso.with(mContext).load(R.drawable.ic_no).into(holder.imageAvail);
+            Picasso.with(mContext).load(R.drawable.cross).error(R.drawable.ic_no).into(holder.imageAvail);
             holder.textAvail.setText("Unavailable");
         } else {
-            Picasso.with(mContext).load(R.drawable.ic_yes).into(holder.imageAvail);
+            Picasso.with(mContext).load(R.drawable.tick).error(R.drawable.ic_yes).into(holder.imageAvail);
             holder.textAvail.setText("Available");
         }
 

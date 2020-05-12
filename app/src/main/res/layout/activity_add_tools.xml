@@ -102,8 +102,8 @@
                     android:id="@+id/etID"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="example: 1"
                     android:ems="10"
+                    android:hint="example: 0000"
                     android:inputType="number" />
 
                 <Space
