@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BRTools"></activity>
+        <activity android:name=".BorrowDetails"></activity>
+        <activity android:name=".BRTools" />
         <activity android:name=".CheckTools" />
         <activity android:name=".AddTools" />
         <activity android:name=".MainActivity">
