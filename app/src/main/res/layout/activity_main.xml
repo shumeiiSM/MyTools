@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/brown"
+    android:background="@drawable/wood"
     android:orientation="vertical">
 
     <FrameLayout
@@ -21,16 +21,17 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content" >
+<!--            android:background="@drawable/bg">-->
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
+                android:layout_gravity="left"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="200dp"
-                android:layout_gravity="left"
-                app:srcCompat="@drawable/ic_build"
+                app:srcCompat="@drawable/ic_build_white"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
@@ -38,9 +39,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
+                android:fontFamily="@font/akronim"
                 android:gravity="center"
                 android:text="Tools"
-                android:textColor="#000000"
+                android:textColor="#ffffff"
                 android:textSize="50sp"
                 android:textStyle="bold" />
 
@@ -48,94 +50,95 @@
                 android:id="@+id/tvName2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
                 android:layout_marginLeft="120dp"
+                android:layout_marginTop="115dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:text="Inventory"
-                android:textColor="#000000"
-                android:textSize="40sp"
-                android:textStyle="bold"/>
+                android:fontFamily="@font/akronim"
+                android:textColor="#ffffff"
+                android:textSize="50sp"
+                android:textStyle="bold" />
 
         </FrameLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="80dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnBR"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="@drawable/fourbuttons"
-                android:text="Borrow/Return">
-            </Button>
+                android:background="@drawable/btn1"
+                android:text="Borrow / Return"
+                android:fontFamily="@font/akronim"
+                ></Button>
 
             <Space
                 android:layout_width="10dp"
-                android:layout_height="10dp">
-            </Space>
+                android:layout_height="10dp"></Space>
 
             <Button
                 android:id="@+id/btnAll"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="@drawable/fourbuttons"
-                android:text="All Tools">
-            </Button>
+                android:background="@drawable/btn2"
+                android:text="All Tools"
+                android:fontFamily="@font/akronim"
+                ></Button>
 
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="@drawable/fourbuttons"
-                android:text="Check Tools">
-            </Button>
+                android:background="@drawable/btn3"
+                android:text="Check Tools"
+                android:fontFamily="@font/akronim"
+                ></Button>
 
             <Space
                 android:layout_width="10dp"
-                android:layout_height="10dp">
-            </Space>
+                android:layout_height="10dp"></Space>
 
             <Button
                 android:id="@+id/btnAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                android:layout_weight="1"
                 android:layout_gravity="right"
-                android:background="@drawable/fourbuttons"
-                android:text="Add Tools">
-            </Button>
+                android:layout_weight="1"
+                android:background="@drawable/btn4"
+                android:text="Add Tools"
+                android:fontFamily="@font/akronim"
+                ></Button>
 
         </LinearLayout>
 
 
     </LinearLayout>
-
-
-
 
 
 </LinearLayout>

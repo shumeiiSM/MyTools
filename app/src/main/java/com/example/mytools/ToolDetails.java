@@ -2,15 +2,11 @@ package com.example.mytools;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
@@ -22,12 +18,10 @@ import com.squareup.picasso.Picasso;
 
 import javax.annotation.Nullable;
 
-public class BorrowDetails extends AppCompatActivity {
+public class ToolDetails extends AppCompatActivity {
 
-    ImageView iv, ivBack;
-    TextView tvName, tvID, tvDate;
-
-    Button btnReturn;
+    ImageView iv, ivBack, ivAvail;
+    TextView tvName, tvID, tvDate, tvAvail;
 
     private FirebaseFirestore db;
     private CollectionReference colRef;
@@ -36,25 +30,24 @@ public class BorrowDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_borrow_details);
+        setContentView(R.layout.activity_tool_details);
 
         iv = findViewById(R.id.iv);
         ivBack = findViewById(R.id.ivBack);
+        ivAvail = findViewById(R.id.ivAvail);
 
         tvName = findViewById(R.id.tvName);
         tvID = findViewById(R.id.tvID);
         tvDate = findViewById(R.id.tvDate);
+        tvAvail = findViewById(R.id.tvAvail);
 
-        btnReturn = findViewById(R.id.btnReturn);
 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentNewAct = new Intent(getBaseContext(), BRTools.class);
-                startActivity(intentNewAct);
+                finish();
             }
         });
-
 
         Intent i = getIntent();
         final String myid = i.getStringExtra("id");
@@ -76,56 +69,25 @@ public class BorrowDetails extends AppCompatActivity {
                     Long id = (Long) snapshot.get("id");
                     String date = (String) snapshot.get("date");
                     String image = (String) snapshot.get("imageURL");
+                    Boolean avail = (Boolean) snapshot.get("availability");
 
 
                     tvName.setText(name);
                     tvDate.setText(date);
                     tvID.setText(String.valueOf(id));
+
+                    if (avail != null & avail) {
+                        Picasso.with(getBaseContext()).load(R.drawable.tick).error(R.drawable.ic_yes).resize(50, 50).into(ivAvail);
+                        tvAvail.setText("Available");
+                    } else {
+                        Picasso.with(getBaseContext()).load(R.drawable.cross).error(R.drawable.ic_no).resize(50,50).into(ivAvail);
+                        tvAvail.setText("Unavailable");
+                    }
+
                     Picasso.with(getBaseContext()).load(image).resize(800,500).into(iv);
                 }
             }
         });
-
-        btnReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                AlertDialog.Builder myBuilder = new AlertDialog.Builder(BorrowDetails.this);
-                myBuilder.setTitle("Confirmation");
-                myBuilder.setMessage("Are you sure to return this tool?");
-                myBuilder.setCancelable(false);
-
-                myBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        colRef = db.collection("Inventory");
-                        docRef = colRef.document(myid);
-                        docRef.update("availability",true);
-
-                        Toast.makeText(BorrowDetails.this, "You have successfully return tool ID: " + myid, Toast.LENGTH_LONG).show();
-
-                        Intent intentNewAct = new Intent(getBaseContext(), MainActivity.class);
-                        startActivity(intentNewAct);
-                    }
-                });
-
-                myBuilder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(BorrowDetails.this, "NO was selected", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                myBuilder.setNeutralButton("CANCEL", null);
-                AlertDialog myDialog = myBuilder.create();
-                myDialog.show();
-
-            }
-        });
-
-
-
-
 
 
     }

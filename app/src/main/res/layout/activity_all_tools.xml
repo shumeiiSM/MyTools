@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/brown"
+    android:background="@drawable/wood"
     android:orientation="vertical"
     tools:context=".AllTools">
 
@@ -12,16 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <ImageView
             android:id="@+id/ivBack"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/ic_back"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#000000"/>
+            android:src="@drawable/ic_back_white"/>
 
         <ImageView
             android:id="@+id/imageView"
@@ -29,7 +26,7 @@
             android:layout_height="70dp"
             android:layout_gravity="right"
             android:layout_margin="10dp"
-            app:srcCompat="@drawable/ic_build"
+            app:srcCompat="@drawable/ic_build_white"
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
@@ -40,7 +37,8 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="90dp"
             android:text="All Tools"
-            android:textColor="#000000"
+            android:fontFamily="@font/akronim"
+            android:textColor="#ffffff"
             android:textSize="30sp"
             android:textStyle="bold" />
 

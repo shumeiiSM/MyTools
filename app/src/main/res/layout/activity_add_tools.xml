@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/brown"
+    android:background="@drawable/wood"
     android:orientation="vertical"
     tools:context=".AddTools">
 
@@ -12,16 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <ImageView
             android:id="@+id/ivBack"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/ic_back"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#000000"/>
+            android:src="@drawable/ic_back_white"/>
 
         <ImageView
             android:id="@+id/imageView"
@@ -29,7 +26,7 @@
             android:layout_height="70dp"
             android:layout_gravity="right"
             android:layout_margin="10dp"
-            app:srcCompat="@drawable/ic_build"
+            app:srcCompat="@drawable/ic_build_white"
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
@@ -40,7 +37,8 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="90dp"
             android:text="Add Tools"
-            android:textColor="#000000"
+            android:fontFamily="@font/akronim"
+            android:textColor="#ffffff"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -59,7 +57,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_camera"
+        android:src="@drawable/ic_camera_white"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp" />
 
@@ -67,7 +65,10 @@
         android:id="@+id/btnUpload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_gravity="center"
+        android:background="@drawable/start"
+        android:fontFamily="@font/akronim"
         android:text="Upload" />
 
 
@@ -94,54 +95,63 @@
                     android:id="@+id/tvID"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="20sp"
+                    android:fontFamily="@font/akronim"
                     android:text="Tool ID:" />
 
                 <EditText
                     android:id="@+id/etID"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/text"
+                    android:fontFamily="@font/akronim"
                     android:ems="10"
-                    android:hint="example: 0000"
+                    android:hint="  example: 0000"
                     android:inputType="number" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="10dp" />
+                    android:layout_height="20dp" />
 
                 <TextView
                     android:id="@+id/tvName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="20sp"
+                    android:fontFamily="@font/akronim"
                     android:text="Tool Name:" />
 
                 <EditText
                     android:id="@+id/etName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/text"
+                    android:fontFamily="@font/akronim"
                     android:ems="10"
-                    android:hint="example: Screw"
+                    android:hint="  example: Screw"
                     android:inputType="textPersonName" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="10dp" />
+                    android:layout_height="20dp" />
 
                 <TextView
                     android:id="@+id/tvDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="20sp"
+                    android:fontFamily="@font/akronim"
                     android:text="Tool's Puchase Date:" />
 
                 <Button
                     android:id="@+id/btnDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/text"
+                    android:fontFamily="@font/akronim"
                     android:text="Select your date" />
 
                 <Space
@@ -169,7 +179,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/start"
-            android:text="Submit" />
+            android:text="Submit"
+            android:fontFamily="@font/akronim" />
 
     </LinearLayout>
 

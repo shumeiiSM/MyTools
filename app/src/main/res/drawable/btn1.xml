@@ -4,16 +4,13 @@
     android:padding="5dp">
 
     <gradient
-        android:angle="0"
+        android:angle="90"
         android:endColor="#e9d5c4"
         android:startColor="#d9ac8d"
         android:type="linear"/>
 
     <corners
-        android:bottomRightRadius="20dp"
-        android:bottomLeftRadius="20dp"
-        android:topLeftRadius="20dp"
-        android:topRightRadius="20dp"/>
+        android:topLeftRadius="50dp"/>
 
     <stroke
         android:width="2dp"

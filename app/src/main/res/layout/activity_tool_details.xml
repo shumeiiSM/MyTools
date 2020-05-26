@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/wood"
     android:orientation="vertical"
-    tools:context=".BorrowDetails">
+    tools:context=".ToolDetails">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -35,21 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="100dp"
-            android:text="Borrowed Tool"
-            android:fontFamily="@font/akronim"
-            android:textColor="#ffffff"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvTitle2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="65dp"
-            android:layout_marginRight="120dp"
-            android:text="Details"
+            android:layout_marginRight="90dp"
+            android:text="Tool's Details"
             android:fontFamily="@font/akronim"
             android:textColor="#ffffff"
             android:textSize="30sp"
@@ -151,22 +138,34 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivAvail"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ic_yes"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tvAvail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Availbility"
+                android:fontFamily="@font/akronim"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </LinearLayout>
+
     </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
-
-    <Button
-        android:id="@+id/btnReturn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_gravity="end|bottom"
-        android:background="@drawable/start"
-        android:text="Return Tool"
-        android:fontFamily="@font/akronim" />
-
 
 </LinearLayout>

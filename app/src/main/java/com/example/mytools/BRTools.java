@@ -43,7 +43,7 @@ public class BRTools extends AppCompatActivity {
     ListView lvTool;
     FirebaseFirestore db;
 
-    Boolean myresult, myAresult;
+    Boolean myresult, myAresult, myNresult;
     Boolean myAvail;
 
     Long myID;
@@ -107,7 +107,6 @@ public class BRTools extends AppCompatActivity {
                         toolList.add(myname + " - " + myID);
                     }
 
-
                 }
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1, toolList);
                 adapter.notifyDataSetChanged();
@@ -133,7 +132,6 @@ public class BRTools extends AppCompatActivity {
                         final String theID = etID.getText().toString();
                         tv.setText(theID);
 
-
                         db.collection("Inventory").addSnapshotListener(new EventListener<QuerySnapshot>() {
                             @Override
                             public void onEvent(@Nullable QuerySnapshot documentSnapshots, @Nullable FirebaseFirestoreException e) {
@@ -142,33 +140,38 @@ public class BRTools extends AppCompatActivity {
                                     myID = (Long) snapshot.get("id");
                                     myAvail = (Boolean) snapshot.get("availability");
 
-                                    if (Long.valueOf(theID).equals(myID)) {
+                                    if (Long.valueOf(theID).equals(myID) && myAvail) {
                                         colRef = db.collection("Inventory");
                                         docRef = colRef.document(theID);
                                         docRef.update("availability",false);
                                         myresult = true;
 
                                         // CHECK FOR EXISTING BORROW TOOL
-//                                    } else if (Long.valueOf(theID).equals(myID) && !myAvail){
-//                                        myAresult = true;
+                                    } else if (Long.valueOf(theID).equals(myID) && !myAvail){
+                                        myAresult = true;
 
+                                    } else if (!Long.valueOf(theID).equals(myID)) {
+                                        myNresult = true;
                                     }
-
-
-
                                 }
+
+
+
+
                             }
                         });
 
 
                         if (myresult != null && myresult) {
                             Toast.makeText(BRTools.this, "You have borrowed ID: " + theID, Toast.LENGTH_SHORT).show();
-//                        } else if  (myAresult != null && myAresult) {
-//                            Toast.makeText(BRTools.this, "This tool ID: " + theID + " is on loaned.", Toast.LENGTH_SHORT).show();
 
-                        } else {
+                        } else if  (myAresult != null && myAresult) {
+                            Toast.makeText(BRTools.this, "This tool ID: " + theID + " is on loaned.", Toast.LENGTH_SHORT).show();
+
+                        } else if (myNresult != null && myNresult) {
                             Toast.makeText(BRTools.this, "No such ID: " + theID, Toast.LENGTH_SHORT).show();
                         }
+
                     }
                 });
 

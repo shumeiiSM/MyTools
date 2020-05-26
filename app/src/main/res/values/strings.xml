@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MyTools</string>
+
+    <string-array name="type">
+        <item>Choose Your Tool Availability</item>
+        <item>Available</item>
+        <item>Unavailable</item>
+    </string-array>
+
 </resources>
