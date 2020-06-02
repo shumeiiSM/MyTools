@@ -50,7 +50,7 @@ public class ToolDetails extends AppCompatActivity {
         });
 
         Intent i = getIntent();
-        final String myid = i.getStringExtra("id");
+        final String myid = i.getStringExtra("checkId");
 
         db = FirebaseFirestore.getInstance();
 

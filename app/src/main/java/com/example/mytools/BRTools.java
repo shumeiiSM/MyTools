@@ -103,7 +103,7 @@ public class BRTools extends AppCompatActivity {
                     myID = (Long) snapshot.get("id");
                     myAvail = (Boolean) snapshot.get("availability");
 
-                    if (!myAvail) {
+                    if (myAvail != null && !myAvail) {
                         toolList.add(myname + " - " + myID);
                     }
 

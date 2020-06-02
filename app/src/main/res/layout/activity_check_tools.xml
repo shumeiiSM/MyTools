@@ -49,7 +49,7 @@
         android:layout_height="40dp" />
 
     <SearchView
-        android:id="@+id/search"
+        android:id="@+id/svSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"/>
