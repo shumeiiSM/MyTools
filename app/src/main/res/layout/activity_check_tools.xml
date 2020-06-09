@@ -10,7 +10,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#2e1201">
 
         <ImageView
             android:id="@+id/ivBack"
@@ -44,15 +45,44 @@
 
     </FrameLayout>
 
+<!--    <TextView-->
+<!--        android:id="@+id/tvSearch"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Search"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:fontFamily="@font/akronim"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold" />-->
+
     <Space
-        android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
 
     <SearchView
         android:id="@+id/svSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+
+    <TextView
+        android:id="@+id/tvFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/akronim"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -73,19 +103,16 @@
         <TextView
             android:id="@+id/tvDate"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="00/00/0000"
             android:gravity="center"
             android:layout_gravity="center"/>
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:entries="@array/type"
-            android:fontFamily="@font/akronim"/>
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"/>
+
 
         <Button
             android:id="@+id/btnSearch"
@@ -97,6 +124,15 @@
             android:text="Search"/>
 
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:background="#ffffff"
+        android:entries="@array/type"
+        android:fontFamily="@font/akronim"/>
 
 
     <Space

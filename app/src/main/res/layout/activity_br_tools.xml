@@ -10,7 +10,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#2e1201">
 
 <!--        <de.hdodenhof.circleimageview.CircleImageView-->
 <!--            xmlns:app="http://schemas.android.com/apk/res-auto"     -->

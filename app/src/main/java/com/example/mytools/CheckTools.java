@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -49,8 +50,7 @@ public class CheckTools extends AppCompatActivity {
     FirebaseFirestore db;
 
     private List<String> toolList = new ArrayList<>();
-    private CollectionReference colRef;
-    private DocumentReference docRef;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +65,16 @@ public class CheckTools extends AppCompatActivity {
         tvDate = findViewById(R.id.tvDate);
         spAvail = findViewById(R.id.spinner);
         btnSearch = findViewById(R.id.btnSearch);
-
+        lvTool = findViewById(R.id.lvTool);
 
         db = FirebaseFirestore.getInstance();
-        lvTool = findViewById(R.id.lvTool);
+
+        //Change color of the drop down arrow of Spinner in Java
+        spAvail.getBackground().setColorFilter(getResources().getColor(R.color.colorBlack), PorterDuff.Mode.SRC_ATOP);
+
+
+        //TO DISPLAY ALL DEFAULT DATA
+        searchData();
 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +107,7 @@ public class CheckTools extends AppCompatActivity {
             }
         });
 
+
         tvDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,28 +115,6 @@ public class CheckTools extends AppCompatActivity {
             }
         });
 
-        searchData();
-        /*
-        db.collection("Inventory").addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot documentSnapshots, @Nullable FirebaseFirestoreException e) {
-                toolList.clear();
-
-                for (DocumentSnapshot snapshot : documentSnapshots) {
-                    String myname = (String) snapshot.get("name");
-                    myID = (Long) snapshot.get("id");
-                    myAvail = (Boolean) snapshot.get("availability");
-
-                    toolList.add(myname + " - " + myID);
-
-
-                }
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1, toolList);
-                adapter.notifyDataSetChanged();
-                lvTool.setAdapter(adapter);
-            }
-        });
-         */
 
         lvTool.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -152,7 +137,7 @@ public class CheckTools extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(final String s) {
-                if (s.isEmpty() == false) {
+                if (!s.isEmpty()) {
 
                     db.collection("Inventory").addSnapshotListener(new EventListener<QuerySnapshot>() {
                         @Override
