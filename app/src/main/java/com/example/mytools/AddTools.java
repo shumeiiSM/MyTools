@@ -245,27 +245,7 @@ public class AddTools extends AppCompatActivity {
         }
     }
 
-    // VALIDATE THE INPUT BY USER
-    private Boolean validate() {
-        Boolean result = false;
-
-        id = Integer.parseInt(etID.getText().toString());
-        name = etName.getText().toString();
-        date = btnDate.getText().toString();
-
-        role = "Inventory";
-
-
-        if (!validateID() | !validateName()) {
-            //Toast.makeText(this, "Please enter all the details", Toast.LENGTH_SHORT).show();
-        } else {
-            result = true;
-        }
-
-        return result;
-    }
-
-
+    // VALIDATE ID
     private boolean validateID() {
         String codeInput = etID.getText().toString().trim();
 
@@ -281,6 +261,7 @@ public class AddTools extends AppCompatActivity {
         }
     }
 
+    // VALIDATE NAME
     private boolean validateName() {
         String nameInput = etName.getText().toString().trim();
 
@@ -295,6 +276,50 @@ public class AddTools extends AppCompatActivity {
             return true;
         }
     }
+
+    // VALIDATE DATE
+    private boolean validateDate() {
+        String dateInput = btnDate.getText().toString().trim();
+
+        if (dateInput.isEmpty()) {
+            btnDate.setError("Field can't be empty");
+            return false;
+        } else if (dateInput.length() == 16) {
+            btnDate.setError("Please choose a date!");
+            return true;
+        } else {
+            btnDate.setError(null);
+            return true;
+        }
+    }
+
+    // VALIDATE THE INPUT BY USER
+    private Boolean validate() {
+        Boolean result = false;
+
+
+//        id = Integer.parseInt(etID.getText().toString());
+//        name = etName.getText().toString();
+//        date = btnDate.getText().toString();
+//
+//        role = "Inventory";
+
+
+        if (!validateID() | !validateName() | !validateDate()) {
+            //Toast.makeText(this, "Please enter all the details", Toast.LENGTH_SHORT).show();
+        } else {
+            id = Integer.parseInt(etID.getText().toString());
+            name = etName.getText().toString();
+            date = btnDate.getText().toString();
+            role = "Inventory";
+
+            result = true;
+        }
+
+        return result;
+    }
+
+
 
 
 

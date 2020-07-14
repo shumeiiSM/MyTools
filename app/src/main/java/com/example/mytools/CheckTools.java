@@ -70,7 +70,7 @@ public class CheckTools extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         //Change color of the drop down arrow of Spinner in Java
-        spAvail.getBackground().setColorFilter(getResources().getColor(R.color.colorBlack), PorterDuff.Mode.SRC_ATOP);
+        //spAvail.getBackground().setColorFilter(getResources().getColor(R.color.colorBlack), PorterDuff.Mode.SRC_ATOP);
 
 
         //TO DISPLAY ALL DEFAULT DATA
